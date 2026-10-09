@@ -1,0 +1,177 @@
+/* =========================================
+   1. ESTILO GERAL DA PÁGINA
+   Define as cores de fundo, texto e fonte
+   utilizadas como padrão no site.
+========================================= */
+
+body {
+    background-color: #0a0a0f;
+    color: #f5f5f7;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+/* =========================================
+   2. TÍTULO PRINCIPAL
+   Define a cor do título StudyFlow.
+========================================= */
+
+h1 {
+    color: #8b5cf6;
+}
+
+
+/* =========================================
+   3. BARRA LATERAL DE NAVEGAÇÃO
+   Mantém o menu fixo à esquerda, ocupando
+   toda a altura da tela.
+========================================= */
+
+nav {
+    background-color: #111118;
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    padding: 10px;
+}
+
+
+/* =========================================
+   4. CONTEÚDO PRINCIPAL
+   Afasta o conteúdo da barra lateral e
+   adiciona espaço interno à área principal.
+========================================= */
+
+.container {
+    margin-left: 240px;
+    padding: 25px;
+}
+
+
+/* =========================================
+   5. LISTA DE NAVEGAÇÃO
+   Remove os marcadores padrão da lista.
+========================================= */
+
+nav ul {
+    list-style: none;
+}
+
+
+/* Estiliza os links do menu lateral. */
+nav a {
+    color: #f5f5f7;
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+/* Altera a aparência dos links ao passar o mouse. */
+nav a:hover {
+    color: darkgray;
+    font-size: 15px;
+}
+
+
+/* =========================================
+   6. CARDS DE RESUMO
+   Organiza os cards em três colunas,
+   com espaçamento entre eles.
+========================================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(210px, 240px));
+    gap: 20px;
+}
+
+
+/* Aparência individual de cada card. */
+.card {
+    background-color: #111118;
+    padding: 25px;
+    margin: 5px;
+    border-radius: 7px;
+    min-height: 180px;
+    transition: transform 0.2s ease;
+}
+
+
+/* =========================================
+   7. LISTA DE MATÉRIAS
+   Organiza o checkbox e as informações
+   de cada matéria em uma linha.
+========================================= */
+
+.tasks label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+
+/* Destaca a matéria quando seu checkbox
+   está marcado, usando o seletor :has(). */
+.tasks label:has(input:checked) {
+    background-color: #1c1630;
+}
+
+
+/* Define a cor de destaque dos checkboxes. */
+.tasks input {
+    accent-color: #8b5cf6;
+}
+
+
+/* =========================================
+   8. INFORMAÇÕES DE CADA MATÉRIA
+   Organiza o nome e a identificação da
+   matéria em uma coluna.
+========================================= */
+
+.materia-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+/* Estiliza a identificação auxiliar:
+   "Matéria 1", "Matéria 2" e assim por diante. */
+.materia-info span {
+    font-size: 12px;
+    color: #a78bfa;
+}
+
+
+/* Remove a margem padrão do nome da matéria,
+   permitindo controlar melhor o espaçamento. */
+.materia-info p {
+    margin: 0;
+}
+
+
+/* Estiliza os paragrafos dos cards */
+.card p{
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 13px;
+}
+
+
+/* Destacar os titulos dos cards */
+.card h3{
+  color: #a78bfa;
+  font-size: 17px;
+}
+
+
+/* Efeito ao passar o mouse por cima dos cards */
+.card:hover{
+  transform: translateY(-5px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 15px #8b5cf6;
+}

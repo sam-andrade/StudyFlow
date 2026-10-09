@@ -1,0 +1,115 @@
+<!doctype html>
+
+<html lang="pt-br">
+
+<head>
+    <!-- Configurações da página -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyFlow</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+
+    <!-- Barra de navegação -->
+    <nav>
+        <h1>StudyFlow</h1>
+
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Matérias</a></li>
+            <li><a href="#">Tarefas</a></li>
+            <li><a href="#">Estudos</a></li>
+            <li><a href="#">Progresso</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Conteúdo principal da página -->
+    <main class="container">
+
+        <!-- Saudação e apresentação -->
+        <header>
+            <h2>Bom dia, Santiago</h2>
+            <p>Vamos ver o que temos para estudar hoje.</p>
+        </header>
+
+
+        <!-- Cards com resumo dos estudos -->
+        <div class="cards">
+
+            <!-- Card de matérias -->
+            <div class="card">
+                <h3>Matérias</h3>
+                <p>4</p>
+            </div>
+
+            <!-- Card de tarefas -->
+            <div class="card">
+                <h3>Tarefas</h3>
+                <p>6</p>
+            </div>
+
+            <!-- Card de tempo de estudo -->
+            <div class="card">
+                <h3>Estudos</h3>
+                <p>7h20</p>
+            </div>
+
+        </div>
+
+
+        <!-- Lista de matérias para estudar -->
+        <div class="tasks">
+            <h2>Matérias</h2>
+
+            <!-- Caixa de seleção da matéria -->
+            <label>
+                <input type="checkbox" />
+                <div class="materia-info">
+                    <span>Matéria 1</span>
+                    <p>Calculo 1</p>
+                </div>
+            </label>
+
+            <label>
+                <input type="checkbox" />
+                <div class="materia-info">
+                    <span>Matéria 2</span>
+                    <p>Programação</p>
+                </div>
+            </label>
+
+            <label>
+                <input type="checkbox" />
+                <div class="materia-info">
+                    <span>Matéria 3</span>
+                    <p>Inglês</p>
+                </div>
+            </label>
+        </div>
+
+
+        <!-- Informações sobre o progresso -->
+        <div class="cards-progresso">
+
+            <!-- Progresso semanal -->
+            <div class="card">
+                <h3>Progresso Semanal</h3>
+                <p>75%</p>
+            </div>
+
+            <!-- Próximos estudos -->
+            <div class="card">
+                <h3>Próximos Estudos</h3>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
