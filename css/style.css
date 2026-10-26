@@ -54,6 +54,13 @@ body {
     color: white;
 }
 
+
+.brand-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+
 /* Destaque roxo do nome. */
 .brand-highlight {
     color: #a78bfa;
