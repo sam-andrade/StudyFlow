@@ -1,82 +1,124 @@
+
 /* =========================================
    1. ESTILO GERAL DA PÁGINA
-   Define as cores de fundo, texto e fonte
-   utilizadas como padrão no site.
+   Define as cores, o texto e a fonte padrão.
 ========================================= */
 
 body {
     background-color: #0a0a0f;
     color: #f5f5f7;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular',
+        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 
 /* =========================================
-   2. TÍTULO PRINCIPAL
-   Define a cor do título StudyFlow.
+   2. BARRA SUPERIOR DE NAVEGAÇÃO
+   Organiza a logo e os links horizontalmente.
 ========================================= */
 
-h1 {
-    color: #8b5cf6;
-}
-
-
-/* =========================================
-   3. BARRA LATERAL DE NAVEGAÇÃO
-   Mantém o menu fixo à esquerda, ocupando
-   toda a altura da tela.
-========================================= */
-
-nav {
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 30px;
     background-color: #111118;
-    width: 240px;
-    height: 100vh;
-    position: fixed;
-    padding: 10px;
+    border-bottom: 1px solid #272330;
 }
 
 
 /* =========================================
-   4. CONTEÚDO PRINCIPAL
-   Afasta o conteúdo da barra lateral e
-   adiciona espaço interno à área principal.
+   3. LOGO DO STUDYFLOW
+========================================= */
+
+/* Nome e alinhamento da marca. */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #f5f5f7;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Símbolo da logo. */
+.brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background-color: #8b5cf6;
+    color: white;
+}
+
+/* Destaque roxo do nome. */
+.brand-highlight {
+    color: #a78bfa;
+}
+
+
+/* =========================================
+   4. LINKS DA NAVEGAÇÃO
+========================================= */
+
+/* Organiza os links em uma linha. */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Aparência dos links. */
+.nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: #d4d4d8;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Ícones dos links. */
+.nav-icon {
+    color: #a78bfa;
+    font-size: 18px;
+}
+
+/* Efeito ao passar o mouse. */
+.nav-links a:hover {
+    background-color: #1c1630;
+    color: #c4b5fd;
+}
+
+/* Destaque do link ativo. */
+.nav-links a.active {
+    background-color: #21183a;
+    color: #c4b5fd;
+}
+
+
+/* =========================================
+   5. CONTEÚDO PRINCIPAL
+   Define o espaço interno da área de conteúdo.
 ========================================= */
 
 .container {
-    margin-left: 240px;
-    padding: 25px;
-}
-
-
-/* =========================================
-   5. LISTA DE NAVEGAÇÃO
-   Remove os marcadores padrão da lista.
-========================================= */
-
-nav ul {
-    list-style: none;
-}
-
-
-/* Estiliza os links do menu lateral. */
-nav a {
-    color: #f5f5f7;
-    text-decoration: none;
-    padding: 10px;
-}
-
-
-/* Altera a aparência dos links ao passar o mouse. */
-nav a:hover {
-    color: darkgray;
-    font-size: 15px;
+    margin-left: 0;
+    padding: 25px 30px;
 }
 
 
 /* =========================================
    6. CARDS DE RESUMO
-   Organiza os cards em três colunas,
-   com espaçamento entre eles.
+   Organiza os cards em três colunas.
 ========================================= */
 
 .cards {
@@ -85,24 +127,42 @@ nav a:hover {
     gap: 20px;
 }
 
-
-/* Aparência individual de cada card. */
+/* Aparência individual dos cards. */
 .card {
     background-color: #111118;
     padding: 25px;
     margin: 5px;
     border-radius: 7px;
     min-height: 180px;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Títulos dos cards. */
+.card h3 {
+    color: #a78bfa;
+    font-size: 17px;
+}
+
+/* Valores apresentados nos cards. */
+.card p {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 13px;
+}
+
+/* Efeito neon ao passar o mouse. */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #8b5cf6;
 }
 
 
 /* =========================================
    7. LISTA DE MATÉRIAS
-   Organiza o checkbox e as informações
-   de cada matéria em uma linha.
+   Organiza os checkboxes e seus textos.
 ========================================= */
 
+/* Cada matéria. */
 .tasks label {
     display: flex;
     align-items: center;
@@ -112,66 +172,35 @@ nav a:hover {
     transition: background-color 0.2s ease;
 }
 
-
-/* Destaca a matéria quando seu checkbox
-   está marcado, usando o seletor :has(). */
+/* Destaque quando a matéria está marcada. */
 .tasks label:has(input:checked) {
     background-color: #1c1630;
 }
 
-
-/* Define a cor de destaque dos checkboxes. */
+/* Cor dos checkboxes. */
 .tasks input {
     accent-color: #8b5cf6;
 }
 
 
 /* =========================================
-   8. INFORMAÇÕES DE CADA MATÉRIA
-   Organiza o nome e a identificação da
-   matéria em uma coluna.
+   8. INFORMAÇÕES DAS MATÉRIAS
 ========================================= */
 
+/* Organiza a identificação e o nome da matéria. */
 .materia-info {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-
-/* Estiliza a identificação auxiliar:
-   "Matéria 1", "Matéria 2" e assim por diante. */
+/* Identificação auxiliar da matéria. */
 .materia-info span {
     font-size: 12px;
     color: #a78bfa;
 }
 
-
-/* Remove a margem padrão do nome da matéria,
-   permitindo controlar melhor o espaçamento. */
+/* Remove a margem padrão do nome da matéria. */
 .materia-info p {
     margin: 0;
-}
-
-
-/* Estiliza os paragrafos dos cards */
-.card p{
-  font-size: 30px;
-  font-weight: bold;
-  margin-top: 13px;
-}
-
-
-/* Destacar os titulos dos cards */
-.card h3{
-  color: #a78bfa;
-  font-size: 17px;
-}
-
-
-/* Efeito ao passar o mouse por cima dos cards */
-.card:hover{
-  transform: translateY(-5px);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 0 15px #8b5cf6;
 }
