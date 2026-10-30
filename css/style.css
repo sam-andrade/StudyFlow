@@ -67,11 +67,12 @@ body {
 }
 
 
+
 /* =========================================
    4. LINKS DA NAVEGAÇÃO
 ========================================= */
 
-/* Organiza os links em uma linha. */
+/* Organiza os links da navegação */
 .nav-links {
     display: flex;
     align-items: center;
@@ -81,7 +82,7 @@ body {
     padding: 0;
 }
 
-/* Aparência dos links. */
+/* Aparência dos links */
 .nav-links a {
     display: flex;
     align-items: center;
@@ -90,25 +91,48 @@ body {
     border-radius: 8px;
     color: #d4d4d8;
     text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.35s ease,
+                color 0.35s ease,
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
 }
 
-/* Ícones dos links. */
+/* Aparência dos ícones */
 .nav-icon {
     color: #a78bfa;
     font-size: 18px;
+    transition: transform 0.35s ease,
+                color 0.35s ease,
+                filter 0.35s ease;
 }
 
-/* Efeito ao passar o mouse. */
-.nav-links a:hover {
-    background-color: #1c1630;
-    color: #c4b5fd;
+/* Efeitos de hover somente em dispositivos com mouse
+   e em telas maiores que 600px */
+@media (hover: hover) and (pointer: fine) and (min-width: 601px) {
+
+    .nav-links a:hover {
+        background-color: #1c1630;
+        color: #c4b5fd;
+        box-shadow: 0 0 10px rgba(139, 92, 246, 0.12);
+    }
+
+    .nav-links a:hover .nav-icon {
+        transform: translateX(4px) scale(1.15);
+    }
 }
 
-/* Destaque do link ativo. */
+/* Destaque permanente do link ativo */
 .nav-links a.active {
     background-color: #21183a;
     color: #c4b5fd;
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.15);
+}
+
+/* Destaque do ícone ativo */
+.nav-links a.active .nav-icon {
+    color: #c4b5fd;
+    filter: drop-shadow(0 0 5px #8b5cf6);
+    transform: scale(1.1);
 }
 
 
@@ -130,7 +154,7 @@ body {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(3, minmax(210px, 240px));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
 }
 
@@ -161,6 +185,26 @@ body {
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 15px #8b5cf6;
+}
+
+/* =========================================
+   6.1 RESPONSIVIDADE DOS CARDS
+========================================= */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .cards,
+    .cards-progresso {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    .cards,
+    .cards-progresso {
+        grid-template-columns: 1fr;
+    }
 }
 
 
@@ -210,4 +254,52 @@ body {
 /* Remove a margem padrão do nome da matéria. */
 .materia-info p {
     margin: 0;
+}
+
+
+/* =========================================
+   9. MENU HAMBÚRGUER
+========================================= */
+
+/* Botão do menu escondido em telas grandes. */
+.menu-toggle {
+    display: none;
+}
+
+/* Navegação em telas menores. */
+@media (max-width: 800px) {
+
+    .navbar {
+        position: relative;
+    }
+
+    /* Exibe o botão do menu. */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: #a78bfa;
+        font-size: 26px;
+        cursor: pointer;
+    }
+
+    /* Esconde os links inicialmente. */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+        background-color: #111118;
+        border-bottom: 1px solid #272330;
+        z-index: 10;
+    }
+
+    /* Exibe os links quando o menu estiver aberto. */
+    .navbar.menu-open .nav-links {
+        display: flex;
+    }
 }
